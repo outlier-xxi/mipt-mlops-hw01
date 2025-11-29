@@ -129,8 +129,6 @@ src/migrations
 doc/stuff
 
 # Data
-**/.data
-**/data
 **/models
 **/visualizations
 **/report
