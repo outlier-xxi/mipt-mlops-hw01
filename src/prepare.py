@@ -1,9 +1,10 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
 import os
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 from ruamel.yaml import YAML
+from sklearn.model_selection import train_test_split
 
 from src.common.settings import settings
 
