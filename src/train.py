@@ -41,9 +41,9 @@ def main():
         class_weight='balanced'
     )
 
-    print("Training Logistic Regression model...\n")
+    print("Training ...\n")
 
-    mlflow.set_tracking_uri("sqlite:///mlflow.db")
+    mlflow.set_tracking_uri(settings.tracking_uri)
     with mlflow.start_run(run_name="wine_quality"):
         mlflow.log_param("random_state", random_state)
         mlflow.log_param("model", "Logistic Regression")
@@ -63,13 +63,10 @@ def main():
         print("\nConfusion Matrix:")
         print(confusion_matrix(y_test, y_pred))
 
-    models_dir = f"{root_dir}/models"
-    os.makedirs(models_dir, exist_ok=True)
+        model_filename = f"{root_dir}/model.pkl"
+        joblib.dump(model, model_filename)
+        mlflow.log_artifact(model_filename)
 
-    joblib.dump(model, f"{models_dir}/best_model.pkl")
-    joblib.dump(scaler, f"{models_dir}/scaler.pkl")
-
-    print(f"\nModel and scaler saved to {models_dir}/")
 
 if __name__ == "__main__":
     main()
