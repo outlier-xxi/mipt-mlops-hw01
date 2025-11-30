@@ -135,6 +135,7 @@ doc/stuff
 **/reports
 **/result
 **/results
+data/processed
 
 **/logs
 **/log
