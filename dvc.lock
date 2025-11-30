@@ -1,0 +1,36 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: env PYTHONPATH=$PWD uv run src/prepare.py
+    deps:
+    - path: data/raw/WineQT.csv
+      hash: md5
+      md5: e2e57e4c41e6ee0213fb12e5a70f4bfb
+      size: 78057
+    - path: src/prepare.py
+      hash: md5
+      md5: 10b48fa70bb0d947e66844d51340fd26
+      size: 2440
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: ba655e0b5f2ae6d93fcb297d8e34b32b.dir
+      size: 67035
+      nfiles: 4
+  train:
+    cmd: env PYTHONPATH=$PWD uv run src/train.py
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: ba655e0b5f2ae6d93fcb297d8e34b32b.dir
+      size: 67035
+      nfiles: 4
+    - path: src/train.py
+      hash: md5
+      md5: 017f3e90596d104f37d95300c226d52d
+      size: 2208
+    outs:
+    - path: model.pkl
+      hash: md5
+      md5: 4b5d4acfd7a729edda1b1f36761e9d49
+      size: 1479
