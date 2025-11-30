@@ -1,7 +1,5 @@
 import os
 
-import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 from ruamel.yaml import YAML
 from sklearn.model_selection import train_test_split
