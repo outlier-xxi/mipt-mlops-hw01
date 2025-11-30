@@ -4,7 +4,7 @@
 
 Построение воспроизводимого ML-пайплайна для предсказания качества вина с использованием DVC и MLflow.
 
-- Датасет: Wine Quality Dataset
+- Датасет: Wine Quality Dataset: https://www.kaggle.com/datasets/yasserh/wine-quality-dataset/data
 - Модель: Logistic Regression
 
 ## Как запустить
@@ -17,11 +17,13 @@ cd mlops-hw01
 # 2. Установить зависимости
 uv install
 # или
-pip install -r requirements.txt
+# pip install -r requirements.txt
 
 # 3. Получить данные из DVC remote
 # Я использовал локальную ФС
-# dvc pull
+# Поэтому придется скачать данные вручную локально из: 
+#   - https://www.kaggle.com/datasets/yasserh/wine-quality-dataset/data
+#   - и сохранить в `data/raw/WineQT.csv`
 
 # 4. Запустить pipeline
 dvc repro
