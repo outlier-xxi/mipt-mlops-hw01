@@ -135,7 +135,15 @@ doc/stuff
 **/reports
 **/result
 **/results
+
+# DVC
 data/processed
+**/*.pkl
+
+# MLflow
+mlflow.db
+mlartifacts/
+mlruns/
 
 **/logs
 **/log
@@ -143,3 +151,6 @@ data/processed
 .obsidian
 AGENTS.md
 CLAUDE.md
+**/*.html
+doc
+train_multi.py
